@@ -27,7 +27,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private UserDetailsService userDetailsService;
   
   @Bean
-  public BCryptPasswordEncoder passwordEncoder() {
+  public BCryptPasswordEncoder passwordEncoder()
+  {
     return new BCryptPasswordEncoder();
   };
   
@@ -47,7 +48,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       //.antMatchers("**/https://test.instamojo.com/**").permitAll()
       //.antMatchers("/**").hasAnyRole("ADMIN", "USER")
       .and().formLogin()
-      .loginPage("/loginpage").loginProcessingUrl("/loginaction").permitAll()
+      .defaultSuccessUrl("/")
+      .loginPage("/login").loginProcessingUrl("/loginaction").permitAll()
       .and()
       .logout().logoutUrl("/logout")
       .invalidateHttpSession(true)
@@ -55,6 +57,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
       .deleteCookies("JESSIONID")
       .logoutSuccessUrl("/login")
       .and().csrf().disable();
-
   }
 }
