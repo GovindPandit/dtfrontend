@@ -67,12 +67,13 @@ public class AppContext extends WebMvcConfigurerAdapter
 			.addResourceLocations("/WEB-INF/resources/data1/");
 	       registry.addResourceHandler("/engine1/**") 
 			.addResourceLocations("/WEB-INF/resources/engine1/");
+	       registry.addResourceHandler("/resources/**").addResourceLocations("/WEB-INF/resources/*");
 	   }
-//	 
-//	    
-//	   @Override
-//	   public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) 
-//	   {
-//	       configurer.enable();
-//	   }
+	 
+	    
+	   @Override
+	   public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) 
+	   {
+	       configurer.enable();
+	   }
 }

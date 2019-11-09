@@ -41,10 +41,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   protected void configure(HttpSecurity http) throws Exception 
   {
 	  http.authorizeRequests()
+	  .antMatchers("/resources/**").permitAll()
 //      .antMatchers("/product/add").hasAuthority("admin")
       //.antMatchers("**/https://test.instamojo.com/**").permitAll()
       //.antMatchers("/**").hasAnyRole("ADMIN", "USER")
       .and().formLogin()
+      
       .defaultSuccessUrl("/")
       .loginPage("/login").loginProcessingUrl("/loginaction").permitAll()
       .and()
