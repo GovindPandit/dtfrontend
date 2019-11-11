@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.niit.dao.ProductDAO;
 import com.niit.model.Product;
 
-
 @Controller
 @RequestMapping("/product")
 public class ProductController 
@@ -51,9 +50,12 @@ public class ProductController
 	}
 
 	
-	@RequestMapping("/delete")
-	public void deleteProduct()
+	@RequestMapping("/delete/{productid}")
+	public String deleteProduct(@PathVariable("productid") int productid)
 	{
-		
+		Product p=new Product();
+		p.setProductid(productid);
+		productDAO.deleteProduct(p);
+		return "redirect:/product/display";
 	}
 }
