@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page isELIgnored="false" %>
+ <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -64,8 +65,10 @@
 						</h5>
 						</div>
 						<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">
-								<a href="#" class="btn btn-primary btn-block" type="button">Edit</a>							
-								<a href="${pageContext.request.contextPath}/product/delete/${product.productid}" class="btn btn-danger btn-block" type="button">Delete</a>						
+								<sec:authorize access="hasAuthority('admin') and isAuthenticated()">
+									<a href="${pageContext.request.contextPath}/product/edit/${product.productid}" class="btn btn-primary btn-block" type="button">Edit</a>							
+									<a href="${pageContext.request.contextPath}/product/delete/${product.productid}" class="btn btn-danger btn-block" type="button">Delete</a>
+								</sec:authorize>						
 								<button class="btn btn-secondary btn-block" type="button">Add To Cart</button>
 								<button class="btn btn-warning btn-block" type="button">Buy</button>
 						</div>

@@ -58,4 +58,20 @@ public class ProductController
 		productDAO.deleteProduct(p);
 		return "redirect:/product/display";
 	}
+	
+	@RequestMapping("/edit/{productid}")
+	public String editProduct(@PathVariable("productid") int productid,ModelMap map)
+	{
+		Product p=new Product();
+		p.setProductid(productid);
+		map.addAttribute("p",productDAO.displayProductById(p));
+		return "addproduct";
+	}
+	
+	@RequestMapping("/update")
+	public String editProduct(@ModelAttribute("p") Product p)
+	{
+		productDAO.updateProduct(p);
+		return "redirect:/product/display";
+	}
 }
