@@ -26,6 +26,11 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
+    <sec:authorize access="isAuthenticated()">
+    	<li class="nav-item active">
+    		<a class="nav-link" href="#">Welcome <sec:authentication property="principal.username" /></a>
+    	</li> 
+	</sec:authorize>
     <sec:authorize access="!isAuthenticated()">
       <li class="nav-item active">
         <a class="nav-link" href="${pageContext.request.contextPath}/home">Home <span class="sr-only">(current)</span></a>
@@ -36,7 +41,11 @@
       <li class="nav-item">
         <a class="nav-link" href="${pageContext.request.contextPath}/register">Register</a>
       </li>
+      
       </sec:authorize>
+      <li class="nav-item">
+	        <a class="nav-link" href="${pageContext.request.contextPath}/product/display">Products</a>
+      </li>
       <sec:authorize access="isAuthenticated()">
       	<sec:authorize access="hasAuthority('admin') and isAuthenticated()">
       		<li class="nav-item">
@@ -44,7 +53,7 @@
     	  	</li>
     	  </sec:authorize>
       	<li class="nav-item">
-	        <a class="nav-link" href="${pageContext.request.contextPath}/product/display">Products</a>
+	        <a class="nav-link" href="${pageContext.request.contextPath}/cartitem/display">Carts</a>
       	</li>
       	<li class="nav-item">
 	        <a class="nav-link" href="${pageContext.request.contextPath}/logout">Logout</a>

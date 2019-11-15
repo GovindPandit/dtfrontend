@@ -40,7 +40,5 @@ public class IndexController
 	public String m3()
 	{
 		return "login";
-	}
-	
-	
+	}	
 }

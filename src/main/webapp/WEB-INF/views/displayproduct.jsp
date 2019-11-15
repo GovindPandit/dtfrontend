@@ -69,7 +69,7 @@
 									<a href="${pageContext.request.contextPath}/product/edit/${product.productid}" class="btn btn-primary btn-block" type="button">Edit</a>							
 									<a href="${pageContext.request.contextPath}/product/delete/${product.productid}" class="btn btn-danger btn-block" type="button">Delete</a>
 								</sec:authorize>						
-								<button class="btn btn-secondary btn-block" type="button">Add To Cart</button>
+								<a href="${pageContext.request.contextPath}/cartitem/add/${product.productid}" class="btn btn-secondary btn-block" >Add To Cart</a>
 								<button class="btn btn-warning btn-block" type="button">Buy</button>
 						</div>
 				</div>
