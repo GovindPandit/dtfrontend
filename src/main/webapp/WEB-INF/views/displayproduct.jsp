@@ -20,7 +20,7 @@
 					<div class="row">
 					<div class="col-md-4 col-lg-4 col-sm-6 col-xs-6">
 						<div class="preview-pic tab-content">
-						  <div class="tab-pane active" id="pic-1"><img src="http://placekitten.com/400/252" class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="height:250px"/></div>
+						  <div class="tab-pane active" id="pic-1"><img src="<c:url value="/images/${product.productid}/${image}"/>" class="col-md-12 col-lg-12 col-xs-12 col-sm-12" style="height:250px"/></div>
 						  <!-- 
 						  <div class="tab-pane" id="pic-2"><img src="http://placekitten.com/400/252" /></div>
 						  <div class="tab-pane" id="pic-3"><img src="http://placekitten.com/400/252" /></div>
@@ -70,7 +70,7 @@
 									<a href="${pageContext.request.contextPath}/product/delete/${product.productid}" class="btn btn-danger btn-block" type="button">Delete</a>
 								</sec:authorize>						
 								<a href="${pageContext.request.contextPath}/cartitem/add/${product.productid}" class="btn btn-secondary btn-block" >Add To Cart</a>
-								<a href="${pageContext.request.contextPath}/product/buy/${product.productid}"  class="btn btn-warning btn-block" type="button">Buy</a>
+								<a href="${pageContext.request.contextPath}/order/buy/${product.productid}"  class="btn btn-warning btn-block" type="button">Buy</a>
 						</div>
 				</div>
 				</div>

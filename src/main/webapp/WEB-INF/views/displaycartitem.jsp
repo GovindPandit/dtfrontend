@@ -65,8 +65,8 @@
 						</h5>
 						</div>
 						<div class="col-md-4 col-lg-4 col-sm-12 col-xs-12">							
-									<a href="${pageContext.request.contextPath}/cartitem/delete/${cartItem.product.productid}" class="btn btn-danger btn-block" type="button">Delete</a>
-									<button class="btn btn-warning btn-block" type="button">Buy</button>
+									<a href="${pageContext.request.contextPath}/cartitem/delete/${cartItem.cartitemid}" class="btn btn-danger btn-block" type="button">Delete</a>
+									<a href="${pageContext.request.contextPath}/order/buy/${product.productid}" class="btn btn-warning btn-block" type="button">Buy</a>
 						</div>
 				</div>
 				</div>

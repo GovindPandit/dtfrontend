@@ -63,8 +63,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             <div class="product-grid">
                 <div class="product-image">
                     <a href="${pageContext.request.contextPath}/product/display/${product.productid}">
-                        <img class="pic-1" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-1.jpg">
-                        <img class="pic-2" src="http://bestjquery.com/tutorial/product-grid/demo9/images/img-2.jpg">
+                        <img class="pic-1" src="<c:url value="/images/${product.productid}/${product.imageurl}"/>">
                     </a>
                     <ul class="social">
                         <li><a href="" data-tip="Quick View"><i class="fa fa-search"></i></a></li>
@@ -89,8 +88,6 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
                         <span>Rs. ${product.price}</span>
                         
                     </div>
-                    <a class="btn btn-primary btn-block" href="">Add To Cart</a>
-                    <a class="btn btn-danger btn-block" href="">Buy</a>
                 </div>
             </div>
             <hr>

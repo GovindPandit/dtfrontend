@@ -48,7 +48,11 @@
 	</c:if>
 	
 	<c:if test="${p!=null }">
-	<spring:form action=" ${pageContext.request.contextPath}/product/update" method="post" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 myclass" modelAttribute="p">
+	<spring:form action="${pageContext.request.contextPath}/product/update" method="post" class="col-lg-6 col-md-6 col-sm-12 col-xs-12 myclass" modelAttribute="p">
+		<div class="form-group">
+			<label>Enter Product ID</label>
+			<spring:input path="productid" placeholder="Enter Product Id" class="form-control"/>
+		</div>
 		<div class="form-group">
 			<label>Enter ProductName</label>
 			<spring:input path="productname" placeholder="Enter ProductName" class="form-control"/>
